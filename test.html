@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Studio Enabler Required -->
+    <meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+	<script src="http://s0.2mdn.net/ads/studio/Enabler.js" type="text/javascript"></script>
+    
+    <script src="dragdealer.min.js"></script>
+    <script src="delta.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="Main_300x250.css">
+    
+    <script src="Main_300x250.js" type="text/javascript"></script>
+    <style>
+        .gm-style-iw div { 
+         overflow:hidden !important; 
+        }
+        /*gm-style-iw {
+         width: 355px !important; 
+        }*/
+        
+        .infoBox {
+          margin-top: 20px;
+          padding: 0 0 53px;
+          width: 355px;
+          background: url(map.infoBox.bottom.png) no-repeat bottom;
+        }
+        
+            .infoBoxWrapper {
+          background: url(map.infoBox.top.png) no-repeat top;
+          padding: 9px 0 0;
+        }
+        
+        .infoBox .agent-details {
+          background: url(map.infoBox.repeat.png) repeat-y 0 0;
+          color: #898a89;
+          float: none;
+          min-height: 165px;
+          padding: 10px 20px 10px;
+        }
+        
+        .infoBox>img {
+          z-index: 1001;
+          right: 10px;
+          top: 3px;
+          padding: 10px;
+        }
+        img {
+          border: 0;
+          -ms-interpolation-mode: bicubic;
+        }
+        .agent-details {
+          position: relative;
+          max-width: 355px;
+          height: 115px;
+        }
+        .agent-details h3 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: #00396c;
+        }
+        .agent-details h3, .agent-details h4 {
+          margin: 0;
+          padding: 0;
+          font-size: 1.13rem;
+          font-weight: 600;
+        }
+         h3{
+         display: block;
+         }
+        
+        .agent-details p {
+          margin: 0 0 10px;
+          padding: 0;
+          font-size: 1rem;
+        }
+        p {
+          display: block;
+          -webkit-margin-before: 1em;
+          -webkit-margin-after: 1em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+        .agent-details a.tel {
+          clear: both;
+          font-size: 1.13rem;
+          font-weight: 600;
+          text-decoration: none;
+          color: #00396c;
+          cursor: text;
+        }
+        a:link, a:visited, a:hover, a:active {
+          color: #fff;
+          outline: none;
+        }
+        a:link, a:visited, a:hover, a:active {
+          color: #fff;
+          outline: none;
+        }
+        span.license.gmap {
+          padding: 5px 10px 0;
+        }
+        span.license {
+          clear: left;
+          display: block;
+          float: right;
+          font-size: .75rem;
+          padding: 10px 10px 0;
+        }
+        .infoBoxWrapper .agent-details a.email, .infoBoxWrapper .agent-details a.directions {
+          min-height: 19px;
+        }
+        .agent-social a.email, .agent-social a.directions, .infoBoxWrapper .agent-details a.email, .infoBoxWrapper .agent-details a.directions {
+          float: left;
+          padding: 0 0 0 32px;
+          font-size: 1rem;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #3097d0;
+          background: url(map.infoBox.icons.email.png) no-repeat 0 0;
+        /*  -ms-behavior: url(/_res/js/libs/backgroundsize.min.htc);*/
+        }
+        
+        .agent-social a.directions, .infoBoxWrapper .agent-details a.directions {
+          float: right;
+          margin: 0 8px 0 0;
+          padding: 0 0 0 40px;
+          background: url(map.infoBox.icons.direction.png) no-repeat 0 0;
+        }
+        
+        .infoBox .agent-details a.agent-website {
+          background: none;
+          bottom: -34px;
+          display: block;
+          color: #fff;
+          display: block;
+          font-size: 1rem;
+          left: 0;
+          text-decoration: none;
+          text-transform: uppercase;
+          position: absolute;
+          width: 100%;
+          padding-right: 15px;
+          padding-left: 35px;
+        }
+        
+        .group:after {
+          content: ".";
+          visibility: hidden;
+          display: block;
+          height: 0;
+          clear: both;
+        }
+        
+        .agent-website {
+          display: block;
+          min-height: 18px;
+          padding: 7px 5px;
+          font-size: .88rem;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #fff;
+          background: #c2c2c2;
+        }
+        
+        br{
+        line-height: 50%;
+        }
+
+    </style>
+</head>
+    
+<body>
+	<div id="loading_dc"><!-- Loading Animation -->
+       <!--<img id="loading" src="FifthThirdLogo.png">-->
+    </div>
+    <div id="container_dc">
+        <div id="content_dc">
+        </div>
+       <!-- <button id="bg-exit"></button>-->
+        
+        
+<!--        <div class="infoBox" style="position: absolute; visibility: visible; width: 355px; left: 594.265513244493px; top: 110.348682242213px;">
+            <img src="http://www.google.com/intl/en_us/mapfiles/close.gif" align="right" style=" position: relative; cursor: pointer; margin: 0;">         
+            <div class="infoBoxWrapper">
+                <div class="agent-details group">     
+                    <h3>Hilda  Thompson</h3>
+                    <h4></h4>
+                    <p>1512 S Wabash Ave<br>Chicago, IL 60605<br><a href="tel:312-435-2200" class="tel gmap">312-435-2200</a><span class="license gmap"></span></p> 
+                    <a class="email gmap" href="mailto:HildaThompson@allstate.com">Email</a>      
+                    <a target="_blank" href="http://maps.google.com/maps?daddr=+1512 S Wabash Ave  Chicago IL 60605" class="directions gmap" data-end=" 1512 S Wabash Ave, Chicago, IL 60605" id="getDir">Directions</a>      
+                    <a href="http://allstateagencies.com/097089?intcid=ILC-CFB-140815:Agent:AWS" class="agent-website gmap" target="_blank">VISIT MY WEBSITE</a>     
+                </div>    
+            </div>
+    </div>
+        -->
+
+        
+        
+</body>
+</html>
+
